@@ -26,6 +26,14 @@ services:
     ports:
       - 6379:6379
 
+  mailhog:
+    image: 'mailhog/mailhog:latest'
+    container_name: mailhog
+    restart: unless-stopped
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
 volumes:
   ambassador_db:
     driver: local
